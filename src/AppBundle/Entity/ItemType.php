@@ -13,6 +13,12 @@ use Doctrine\ORM\Mapping as ORM;
 class ItemType
 {
     /**
+     * @var
+     * @ORM\ManyToMany(targetEntity="AppBundle\Entity\RoomCategory", inversedBy="itemTypes")
+     */
+    private $roomCategorys;
+
+    /**
      * @var int
      *
      * @ORM\Column(name="id", type="integer")
@@ -137,5 +143,39 @@ class ItemType
     public function getItemCategory()
     {
         return $this->itemCategory;
+    }
+
+    /**
+     * Add roomCategory
+     *
+     * @param \AppBundle\Entity\RoomCategory $roomCategory
+     *
+     * @return ItemType
+     */
+    public function addRoomCategory(\AppBundle\Entity\RoomCategory $roomCategory)
+    {
+        $this->roomCategorys[] = $roomCategory;
+
+        return $this;
+    }
+
+    /**
+     * Remove roomCategory
+     *
+     * @param \AppBundle\Entity\RoomCategory $roomCategory
+     */
+    public function removeRoomCategory(\AppBundle\Entity\RoomCategory $roomCategory)
+    {
+        $this->roomCategorys->removeElement($roomCategory);
+    }
+
+    /**
+     * Get roomCategorys
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getRoomCategorys()
+    {
+        return $this->roomCategorys;
     }
 }
