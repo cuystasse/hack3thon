@@ -10,7 +10,12 @@ $(".search-bar").keyup(function () {
             success: function (response) {
                 var itemtypes = JSON.parse(response.data);
                 html = "";
+                var currentCat = '';
                 for (itemtype in itemtypes) {
+                    if (currentCat != itemtypes[itemtype].icatName) {
+                        currentCat = itemtypes[itemtype].icatName;
+                        html += "<li class='catpppp'>" + itemtypes[itemtype].icatName + "</li>";
+                    }
                     html += "<li class='list-element-you-know'>" + itemtypes[itemtype].name + "</li>";
                 }
                 $('#autocomplete').html(html);
