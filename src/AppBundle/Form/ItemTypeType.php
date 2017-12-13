@@ -3,8 +3,6 @@
 namespace AppBundle\Form;
 
 use AppBundle\Entity\ItemCategory;
-use AppBundle\Entity\Room;
-use AppBundle\Entity\RoomCategory;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
