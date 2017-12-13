@@ -4,6 +4,7 @@ li {
 
 .content {
     border: 1px solid black;
+    height: 80vh;
 }
 
 .search-div {
@@ -21,9 +22,15 @@ li {
 }
 
 .search-bar {
-    margin: 3vh 2vw;
+    margin: 3vh 5%;
+    width: 90%;
 }
 
 .search-list {
-    margin: 3vh 2vw;
+    margin: 3vh 5%;
+}
+
+.list-element-you-know {
+    background: lightblue;
+    padding: 1vh;
 }
