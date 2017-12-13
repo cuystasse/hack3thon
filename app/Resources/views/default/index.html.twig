@@ -6,18 +6,30 @@
             <div class="search-div col-sm-2">
                 <input autocomplete="off" class="search-bar"/>
                 <div id="autocomplete" class="search-list">
+                    {# changer la ligne en dessous en dynamique mac #}
                     <li class="list-element-you-know">Nan mais allo quoi</li>
                 </div>
             </div>
             <div class="content col-sm-8">
                 <div class="row">
-                    <div class="col-xs-4">
+                    <div class="room-links col-xs-4 nav nav-pills nav-stacked">
+                        {# !! PENSER A METTRE UN class="active" SEULEMENT SUR LE PREMIER ELEMENT !!
+                        changer la ligne en dessous en dynamique mac #}
+                        <li class="room-link active"><a href="#tab" data-toggle="pill">Chambre 3</a></li>
+                        <button class="add-room">Ajouter une pièce</button>                        
                     </div>
-                    <div class="col-xs-8">
+                    <div class="room-items col-xs-8">
+                        {# !! PENSER A METTRE UN class="active" SEULEMENT SUR LE PREMIER ELEMENT !!
+                        changer la ligne en dessous en dynamique mac #}
+                        <li class="tab-pane room-item active" id="tab">Chaise roumaine</li>
+                        <button class="add-item">Ajouter un meuble</button>
                     </div>
                 </div>
             </div>
-            <div class="recap col-sm-2"></div>
+            <div class="recap col-sm-2">
+                {# changer la ligne en dessous en dynamique mac #}
+                <li class="recap-item">Aie Aie Aie</li>
+            </div>
         </div>
     </div>
 {% endblock %}
