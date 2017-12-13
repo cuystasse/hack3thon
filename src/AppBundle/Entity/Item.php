@@ -28,6 +28,12 @@ class Item
     private $itemType;
 
     /**
+    * @ORM\ManyToOne(targetEntity="Room", inversedBy="items")
+    * @ORM\JoinColumn(referencedColumnName="id")
+    */
+    private $room;
+
+    /**
      * @var string
      *
      * @ORM\Column(name="name", type="string", length=255)
@@ -215,5 +221,29 @@ class Item
     public function getItemType()
     {
         return $this->itemType;
+    }
+
+    /**
+     * Set room
+     *
+     * @param \AppBundle\Entity\Room $room
+     *
+     * @return Item
+     */
+    public function setRoom(\AppBundle\Entity\Room $room = null)
+    {
+        $this->room = $room;
+
+        return $this;
+    }
+
+    /**
+     * Get room
+     *
+     * @return \AppBundle\Entity\Room
+     */
+    public function getRoom()
+    {
+        return $this->room;
     }
 }
