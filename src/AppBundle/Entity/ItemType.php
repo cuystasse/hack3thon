@@ -13,6 +13,12 @@ use Doctrine\ORM\Mapping as ORM;
 class ItemType
 {
     /**
+     * @var
+     * @ORM\ManyToMany(targetEntity="AppBundle\Entity\RoomCategory", inversedBy="itemTypes")
+     */
+    private $roomCategorys;
+
+    /**
      * @var int
      *
      * @ORM\Column(name="id", type="integer")

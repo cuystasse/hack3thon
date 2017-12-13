@@ -14,6 +14,12 @@ class RoomCategory
 {
     /**
      * @var
+     * @ORM\ManyToMany(targetEntity="AppBundle\Entity\ItemType", mappedBy="roomCategorys")
+     */
+    private $itemTypes;
+
+    /**
+     * @var
      * @ORM\OneToMany(targetEntity="AppBundle\Entity\Room",mappedBy="category")
      */
     private $rooms;
