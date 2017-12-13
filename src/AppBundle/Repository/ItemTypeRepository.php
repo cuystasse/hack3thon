@@ -10,4 +10,17 @@ namespace AppBundle\Repository;
  */
 class ItemTypeRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function getItemTypeLike($itemType, $room=null)
+    {
+        $itemType = "%" . $itemType . "%";
+
+        $qb = $this->createQueryBuilder('it')
+            ->select('it.name')
+            ->where('it.name LIKE :itemType')
+//            ->andWhere('t.town LIKE :town')
+//            ->setParameter('country', $room)
+            ->setParameter('itemType', $itemType)
+            ->getQuery();
+        return $qb->getResult();
+    }
 }

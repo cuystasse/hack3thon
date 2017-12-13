@@ -3,9 +3,13 @@
 namespace AppBundle\Controller;
 
 use AppBundle\Entity\ItemType;
+use AppBundle\Repository\ItemTypeRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component\HttpFoundation\Request;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpKernel\Exception\HttpException;
 
 /**
  * Itemtype controller.
@@ -133,4 +137,25 @@ class ItemTypeController extends Controller
             ->getForm()
         ;
     }
+
+    /**
+     * @param Request $request
+     * @param $town
+     * @return JsonResponse
+     * @Route("/list/{itemType}", name="list-itemType")
+     */
+    public function autocompleteAction(Request $request, $itemType)
+    {
+        if ($request->isXmlHttpRequest()){
+            /**
+             * @var $repository ItemTypeRepository
+             */
+            $repository = $this->getDoctrine()->getRepository('AppBundle:ItemType');
+            $data = $repository->getItemTypeLike($itemType);
+            return new JsonResponse(array("data" => json_encode($data)));
+        } else {
+            throw new HttpException('500', 'Invalid call');
+        }
+    }
+
 }
