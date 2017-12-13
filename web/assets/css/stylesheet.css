@@ -1,0 +1,29 @@
+li {
+    list-style: none;
+}
+
+.content {
+    border: 1px solid black;
+}
+
+.search-div {
+    border: 1px solid red;
+    overflow: hidden;
+    height: 80vh;
+}
+
+.recap {
+    border: 1px solid blue;
+    height: 80vh;
+}
+.page {
+    margin-top: 10vh;
+}
+
+.search-bar {
+    margin: 3vh 2vw;
+}
+
+.search-list {
+    margin: 3vh 2vw;
+}
