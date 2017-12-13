@@ -4,14 +4,14 @@ $(".search-bar").keyup(function () {
     if (itemType.length >= 2) {
         $.ajax({
             type: "POST",
-            url: "/itemyype/list/" + itemType,
+            url: "/itemtype/list/" + itemType,
             dataType: 'json',
             timeout: 3000,
             success: function (response) {
                 var itemtypes = JSON.parse(response.data);
                 html = "";
                 for (itemtype in itemtypes) {
-                    html += "<li>" + itemtypes[itemtype].name + "</li>";
+                    html += "<li class='list-element-you-know'>" + itemtypes[itemtype].name + "</li>";
                 }
                 $('#autocomplete').html(html);
                 $('#autocomplete li').on('click', function () {
