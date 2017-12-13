@@ -115,4 +115,38 @@ class RoomCategory
     {
         return $this->rooms;
     }
+
+    /**
+     * Add itemType
+     *
+     * @param \AppBundle\Entity\ItemType $itemType
+     *
+     * @return RoomCategory
+     */
+    public function addItemType(\AppBundle\Entity\ItemType $itemType)
+    {
+        $this->itemTypes[] = $itemType;
+
+        return $this;
+    }
+
+    /**
+     * Remove itemType
+     *
+     * @param \AppBundle\Entity\ItemType $itemType
+     */
+    public function removeItemType(\AppBundle\Entity\ItemType $itemType)
+    {
+        $this->itemTypes->removeElement($itemType);
+    }
+
+    /**
+     * Get itemTypes
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getItemTypes()
+    {
+        return $this->itemTypes;
+    }
 }
