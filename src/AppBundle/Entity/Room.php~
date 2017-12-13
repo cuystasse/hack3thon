@@ -69,28 +69,5 @@ class Room
     {
         return $this->name;
     }
-
-    /**
-     * Set category
-     *
-     * @param \AppBundle\Entity\RoomCategory $category
-     *
-     * @return Room
-     */
-    public function setCategory(\AppBundle\Entity\RoomCategory $category)
-    {
-        $this->category = $category;
-
-        return $this;
-    }
-
-    /**
-     * Get category
-     *
-     * @return \AppBundle\Entity\RoomCategory
-     */
-    public function getCategory()
-    {
-        return $this->category;
-    }
 }
+
