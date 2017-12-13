@@ -2,6 +2,9 @@
 
 namespace AppBundle\Form;
 
+use AppBundle\Entity\Room;
+use AppBundle\Entity\RoomCategory;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -13,7 +16,10 @@ class ItemTypeType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('name')->add('roomCategorys')->add('itemCategory');
+        $builder->add('name')->add('roomCategorys')->add('itemCategory', EntityType::class, [
+            "class" => RoomCategory::class,
+            "choice_label" => "getName",
+        ]);
     }
     
     /**

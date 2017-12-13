@@ -12,6 +12,11 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class RoomCategory
 {
+    public function __toString()
+    {
+        return $this->getName();
+    }
+
     /**
      * @var
      * @ORM\ManyToMany(targetEntity="AppBundle\Entity\ItemType", mappedBy="roomCategorys")
