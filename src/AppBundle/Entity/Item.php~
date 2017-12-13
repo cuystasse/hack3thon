@@ -192,4 +192,28 @@ class Item
     {
         return $this->volume;
     }
+
+    /**
+     * Set itemType
+     *
+     * @param \AppBundle\Entity\ItemType $itemType
+     *
+     * @return Item
+     */
+    public function setItemType(\AppBundle\Entity\ItemType $itemType = null)
+    {
+        $this->itemType = $itemType;
+
+        return $this;
+    }
+
+    /**
+     * Get itemType
+     *
+     * @return \AppBundle\Entity\ItemType
+     */
+    public function getItemType()
+    {
+        return $this->itemType;
+    }
 }

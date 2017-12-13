@@ -13,6 +13,12 @@ use Doctrine\ORM\Mapping as ORM;
 class ItemType
 {
     /**
+     * @var
+     * @ORM\ManyToMany(targetEntity="AppBundle\Entity\RoomCategory", inversedBy="itemTypes")
+     */
+    private $roomCategorys;
+
+    /**
      * @var int
      *
      * @ORM\Column(name="id", type="integer")
@@ -72,5 +78,104 @@ class ItemType
     public function getName()
     {
         return $this->name;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->items = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add item
+     *
+     * @param \AppBundle\Entity\Item $item
+     *
+     * @return ItemType
+     */
+    public function addItem(\AppBundle\Entity\Item $item)
+    {
+        $this->items[] = $item;
+
+        return $this;
+    }
+
+    /**
+     * Remove item
+     *
+     * @param \AppBundle\Entity\Item $item
+     */
+    public function removeItem(\AppBundle\Entity\Item $item)
+    {
+        $this->items->removeElement($item);
+    }
+
+    /**
+     * Get items
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getItems()
+    {
+        return $this->items;
+    }
+
+    /**
+     * Set itemCategory
+     *
+     * @param \AppBundle\Entity\ItemCategory $itemCategory
+     *
+     * @return ItemType
+     */
+    public function setItemCategory(\AppBundle\Entity\ItemCategory $itemCategory = null)
+    {
+        $this->itemCategory = $itemCategory;
+
+        return $this;
+    }
+
+    /**
+     * Get itemCategory
+     *
+     * @return \AppBundle\Entity\ItemCategory
+     */
+    public function getItemCategory()
+    {
+        return $this->itemCategory;
+    }
+
+    /**
+     * Add roomCategory
+     *
+     * @param \AppBundle\Entity\RoomCategory $roomCategory
+     *
+     * @return ItemType
+     */
+    public function addRoomCategory(\AppBundle\Entity\RoomCategory $roomCategory)
+    {
+        $this->roomCategorys[] = $roomCategory;
+
+        return $this;
+    }
+
+    /**
+     * Remove roomCategory
+     *
+     * @param \AppBundle\Entity\RoomCategory $roomCategory
+     */
+    public function removeRoomCategory(\AppBundle\Entity\RoomCategory $roomCategory)
+    {
+        $this->roomCategorys->removeElement($roomCategory);
+    }
+
+    /**
+     * Get roomCategorys
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getRoomCategorys()
+    {
+        return $this->roomCategorys;
     }
 }

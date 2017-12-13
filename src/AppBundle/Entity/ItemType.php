@@ -144,4 +144,38 @@ class ItemType
     {
         return $this->itemCategory;
     }
+
+    /**
+     * Add roomCategory
+     *
+     * @param \AppBundle\Entity\RoomCategory $roomCategory
+     *
+     * @return ItemType
+     */
+    public function addRoomCategory(\AppBundle\Entity\RoomCategory $roomCategory)
+    {
+        $this->roomCategorys[] = $roomCategory;
+
+        return $this;
+    }
+
+    /**
+     * Remove roomCategory
+     *
+     * @param \AppBundle\Entity\RoomCategory $roomCategory
+     */
+    public function removeRoomCategory(\AppBundle\Entity\RoomCategory $roomCategory)
+    {
+        $this->roomCategorys->removeElement($roomCategory);
+    }
+
+    /**
+     * Get roomCategorys
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getRoomCategorys()
+    {
+        return $this->roomCategorys;
+    }
 }
