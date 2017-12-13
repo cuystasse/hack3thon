@@ -8,6 +8,7 @@
 
 namespace AppBundle\DataFixtures;
 
+use AppBundle\Entity\RoomCategory;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\Persistence\ObjectManager;
 
@@ -25,6 +26,11 @@ class RoomCategoryFixtures extends Fixture
 
         foreach ($tab as $name) {
             $roomCat = new RoomCategory();
+            $roomCat->setName($name);
+
+            $manager->persist($roomCat);
         }
+
+        $manager->flush();
     }
 }
