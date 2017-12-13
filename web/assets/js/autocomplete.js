@@ -16,12 +16,24 @@ $(".search-bar").keyup(function () {
                         currentCat = itemtypes[itemtype].icatName;
                         html += "<li class='catpppp'>" + itemtypes[itemtype].icatName + "</li>";
                     }
-                    html += "<li class='list-element-you-know'>" + itemtypes[itemtype].name + "</li>";
+                    html += "<li data-listid='" + itemtypes[itemtype].id + "' class='list-element-you-know'>" + itemtypes[itemtype].name + "</li>";
                 }
+
                 $('#autocomplete').html(html);
                 $('#autocomplete li').on('click', function () {
                     $('.search-bar').val($(this).text());
-                    $('#autocomplete').html('');
+                    var itemId = $(this).data('listid');
+                    console.log(itemId);
+                    if ($('#tab-' + itemId).length === 0) {
+                        elm = $("<li class=\"tab-pane room-item\" id=\"tab-" + itemId + "\">" + $(this).text() + "<span class='badge'>1</span></li>")
+                        $('.room-items').append(elm);
+                    }
+                    else {
+                        span = $('#tab-' + itemId + " span:last-child");
+                        count = parseInt(span.text()) + 1;
+                        span.text(count);
+                    }
+
                 });
             },
             error: function () {
