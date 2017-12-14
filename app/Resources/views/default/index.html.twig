@@ -15,30 +15,10 @@
                     <div class="room-links tab">
                         {# UN id='defaultOpen' DOIT ETRE MIS SUR LE PREMIER ELEMENT DANS LE CAS OU PLUSIEURS PIECES SONT LA DE BASE
                         DONC A PRIORI IL NE FAUDRA PAS LE METTRE #}
-                        <button class="room-link" onclick="openRoom(event, 'cuisine{#nom de la pièce#}')" id="defaultOpen">{# nom de la pièce #}Chambre 3
-                        </button>
-                        <button class="room-link" onclick="openRoom(event, 'salle de bain{#nom de la pièce#}')">{# nom de la pièce #}Chambre 3
-                        </button>
-                        <button class="room-link" onclick="openRoom(event, 'cave{#nom de la pièce#}')">{# nom de la pièce #}Chambre 3
-                        </button>
-                        <button class="room-link" onclick="openRoom(event, 'donjon{#nom de la pièce#}')">{# nom de la pièce #}Chambre 3
-                        </button>
                         <a data-toggle="modal" href="#myRoomCategoryModal"
                            class="add-room btn btn-primary btn-lg">Ajouter une pièce</a>
                     </div>
-                    <div class="col-xs-8">
-                        <div class="room-items" id="cuisine{# nom de la pièce #}">
-                            <li class="room-item">Hola mis amigos</li>
-                        </div>
-                        <div class="room-items" id="salle de bain{# nom de la pièce #}">
-                            <li class="room-item">Hola mis amigas</li>
-                        </div>
-                        <div class="room-items" id="cave{# nom de la pièce #}">
-                            <li class="room-item">Hola mis amigis</li>
-                        </div>
-                        <div class="room-items" id="donjon{# nom de la pièce #}">
-                            <li class="room-item">Hola mis amigus</li>
-                        </div>
+                    <div class="col-xs-8 divRooms">
                         <button class="add-item">Ajouter un meuble</button>
                     </div>
                 </div>
