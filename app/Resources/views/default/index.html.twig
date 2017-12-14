@@ -2,12 +2,24 @@
 
 {% block body %}
     <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-3">
+                <h2>1.Ajouter une pièce</h2>
+            </div>
+            <div class="col-xs-3">
+                <h2 class="text-center">2. Ajouter les meubles de la pièce</h2>
+            </div>
+            <div class="col-xs-3">
+                <h2>3.Valider votre déménagement</h2>
+            </div>
+            <div class="col-xs-3">
+                <h2>4.Imprimer votre récapitulatif</h2>
+            </div>
+        </div>
         <div class="row page">
             <div class="search-div col-sm-2">
-                <input autocomplete="off" class="search-bar"/>
+                <input autocomplete="off" class="search-bar" placeholder="Recherche"/>
                 <div id="autocomplete" class="search-list">
-                    {# changer la ligne en dessous en dynamique mac #}
-                    <li class="list-element-you-know">Nan mais allo quoi</li>
                 </div>
             </div>
             <div class="content col-sm-8">
@@ -25,7 +37,8 @@
             </div>
 
             <div class="recap col-sm-2">
-                <button type="button" class="btn btn-default btn-modal-recap" data-toggle="modal" data-target=".modal-recap-lg">
+                <button type="button" class="btn btn-default btn-modal-recap" data-toggle="modal"
+                        data-target=".modal-recap-lg">
                     <span class="glyphicon glyphicon-list-alt"> Recapitulatif</span>
                 </button>
 
@@ -54,7 +67,8 @@
             </div>
 
             <!-- Modal -->
-            <div class="modal fade" id="myRoomCategoryModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal fade" id="myRoomCategoryModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                 aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -63,7 +77,8 @@
                         </div>
                         <div class="modal-body row">
                             {% for roomCategory in roomCategories %}
-                                <div data-id="{{ roomCategory.id }}" class="roomCategoryModal col-md-6 text-center">{{ roomCategory.name }}</div>
+                                <div data-id="{{ roomCategory.id }}"
+                                     class="roomCategoryModal col-md-6 text-center">{{ roomCategory.name }}</div>
                             {% endfor %}
                         </div>
                         <div class="modal-footer">
