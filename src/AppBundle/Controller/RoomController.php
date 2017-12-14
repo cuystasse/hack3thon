@@ -3,6 +3,7 @@
 namespace AppBundle\Controller;
 
 use AppBundle\Entity\Room;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component\HttpFoundation\Request;
@@ -116,6 +117,27 @@ class RoomController extends Controller
         }
 
         return $this->redirectToRoute('room_index');
+    }
+
+    /**
+     * @param Request $request
+     * @param \AppBundle\Entity\RoomCategory $roomCategory
+     * @param string $roomName
+     * @Route("/newroom/{catid}/{roomName}", name="newroom-id")
+     * @ParamConverter("roomCategory", options={"mapping":{"catid":"id"}})
+     * @Method({"GET", "POST"})
+     */
+    public function autoNew(Request $request,\AppBundle\Entity\RoomCategory $roomCategory, $roomName)
+    {
+        $em = $this->getDoctrine()->getManager();
+        if ($request->isXmlHttpRequest()) {
+            $room = new Room();
+            $room->setName($roomName)->setCategory($roomCategory);
+            $em->persist($room);
+            $em->flush();
+
+            return $this->redirectToRoute('homepage');
+        }
     }
 
     /**
