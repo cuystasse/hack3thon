@@ -9,10 +9,8 @@
                 <h3>Définissez la liste des objets que vous souhaitez déménager.</h3>
             </div>
             <div class="search-div col-sm-2">
-                <input autocomplete="off" class="search-bar"/>
+                <input autocomplete="off" class="search-bar" placeholder="Recherche"/>
                 <div id="autocomplete" class="search-list">
-                    {# changer la ligne en dessous en dynamique mac #}
-                    <li class="list-element-you-know">Nan mais allo quoi</li>
                 </div>
             </div>
             <div class="content col-sm-8">
@@ -32,11 +30,10 @@
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="recap col-sm-2">
-                <button type="button" class="btn btn-default btn-modal-recap" data-toggle="modal" data-target=".modal-recap-lg">
-                    <span class="glyphicon glyphicon-list-alt"> Recapitulatif</span>
+                <button type="button" class="btn btn-default btn-modal-recap pull-right" data-toggle="modal"
+                        data-target=".modal-recap-lg">
+                    <span class="glyphicon glyphicon-list-alt">Imprimer votre liste</span>
                 </button>
 
                 <div class="modal right fade fade modal-recap-lg " tabindex="-1" role="dialog"
@@ -64,7 +61,8 @@
             </div>
 
             <!-- Modal -->
-            <div class="modal fade" id="myRoomCategoryModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal fade" id="myRoomCategoryModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                 aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -73,7 +71,8 @@
                         </div>
                         <div class="modal-body row">
                             {% for roomCategory in roomCategories %}
-                                <div data-id="{{ roomCategory.id }}" class="roomCategoryModal col-md-6 text-center">{{ roomCategory.name }}</div>
+                                <div data-id="{{ roomCategory.id }}"
+                                     class="roomCategoryModal col-md-6 text-center">{{ roomCategory.name }}</div>
                             {% endfor %}
                         </div>
                         <div class="modal-footer">
@@ -82,6 +81,8 @@
                     </div><!-- /.modal-content -->
                 </div><!-- /.modal-dialog -->
             </div><!-- /.modal -->
+        </div>
+        <div class="recap col-sm-2">
 
         </div>
     </div>
