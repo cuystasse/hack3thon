@@ -12,22 +12,63 @@
             </div>
             <div class="content col-sm-8">
                 <div class="row">
-                    <div class="room-links col-xs-4 nav nav-pills nav-stacked">
-                        {# !! PENSER A METTRE UN class="active" SEULEMENT SUR LE PREMIER ELEMENT !!
-                        changer la ligne en dessous en dynamique mac #}
-                        <li class="room-link active"><a href="#tab" data-toggle="pill">Chambre 3</a></li>
+                    <div class="room-links tab">
+                        {# UN id='defaultOpen' DOIT ETRE MIS SUR LE PREMIER ELEMENT DANS LE CAS OU PLUSIEURS PIECES SONT LA DE BASE
+                        DONC A PRIORI IL NE FAUDRA PAS LE METTRE #}
+                        <button class="room-link" onclick="openRoom(event, 'cuisine{#nom de la pièce#}')" id="defaultOpen">{# nom de la pièce #}Chambre 3
+                        </button>
+                        <button class="room-link" onclick="openRoom(event, 'salle de bain{#nom de la pièce#}')">{# nom de la pièce #}Chambre 3
+                        </button>
+                        <button class="room-link" onclick="openRoom(event, 'cave{#nom de la pièce#}')">{# nom de la pièce #}Chambre 3
+                        </button>
+                        <button class="room-link" onclick="openRoom(event, 'donjon{#nom de la pièce#}')">{# nom de la pièce #}Chambre 3
+                        </button>
                         <a data-toggle="modal" href="#myRoomCategoryModal"
                            class="add-room btn btn-primary btn-lg">Ajouter une pièce</a>
                     </div>
-                    <div class="room-items col-xs-8">
-                        {# !! PENSER A METTRE UN class="active" SEULEMENT SUR LE PREMIER ELEMENT !!
-                        changer la ligne en dessous en dynamique mac #}
-                        <div class="tab-pane room-item active" id="tab">Cuisine test placeholder</div>
+                    <div class="col-xs-8">
+                        <div class="room-items" id="cuisine{# nom de la pièce #}">
+                            <li class="room-item">Hola mis amigos</li>
+                        </div>
+                        <div class="room-items" id="salle de bain{# nom de la pièce #}">
+                            <li class="room-item">Hola mis amigas</li>
+                        </div>
+                        <div class="room-items" id="cave{# nom de la pièce #}">
+                            <li class="room-item">Hola mis amigis</li>
+                        </div>
+                        <div class="room-items" id="donjon{# nom de la pièce #}">
+                            <li class="room-item">Hola mis amigus</li>
+                        </div>
                         <button class="add-item">Ajouter un meuble</button>
                     </div>
                 </div>
             </div>
+
             <div class="recap col-sm-2">
+                <button type="button" class="btn btn-default btn-modal-recap" data-toggle="modal" data-target=".modal-recap-lg">
+                    <span class="glyphicon glyphicon-list-alt"> Recapitulatif</span>
+                </button>
+
+                <div class="modal right fade fade modal-recap-lg " tabindex="-1" role="dialog"
+                     aria-labelledby="myLargeModalLabel">
+                    <div class="modal-dialog modal-lg" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                            aria-hidden="true">&times;</span></button>
+                                <h4 class="modal-title"> Récapitulatif </h4>
+                            </div>
+                            <div class="modal-body">
+                                <p>{# ici sera inscrit dans le marbre le récapitulatif du déménagement #}
+                                    trois chaises peau de cougar</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            </div>
+                        </div><!-- /.modal-content -->
+                    </div><!-- /.modal-dialog -->
+                </div><!-- /.modal -->
+
                 {# changer la ligne en dessous en dynamique mac #}
                 <li class="recap-item">Aie Aie Aie</li>
             </div>
@@ -55,4 +96,3 @@
         </div>
     </div>
 {% endblock %}
-
