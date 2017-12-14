@@ -20,7 +20,7 @@ $(".search-bar").keyup(function () {
                 }
 
                 $('#autocomplete').html(html);
-                $('#autocomplete li').on('click', function () {
+                $('#autocomplete .list-element-you-know').on('click', function () {
                     $('.search-bar').val($(this).text());
                     var itemId = $(this).data('listid');
                     console.log(itemId);
