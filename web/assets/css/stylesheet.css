@@ -1,24 +1,71 @@
+@font-face {
+    font-family: Gotham-Black;
+    src: url('/bundles/app/frontend/fonts/Gotham/Gotham-Black.eot');
+}
+
 li {
     list-style: none;
 }
 
 .content {
-    border: 1px solid black;
+    border: 3px solid #4C448F;
     height: 80vh;
+    background: #F0F0F0;
 }
 
 .search-div {
-    border: 1px solid red;
+    border: 3px solid #4C448F;
     overflow: hidden;
     height: 80vh;
 }
 
+.navbar {
+    position: fixed;
+}
+
+.titles {
+    text-align: center;
+}
+
+.add-item {
+    cursor: pointer;
+    float: right;
+    position: absolute;
+    margin-top: 20px;
+}
+
+.items-div {
+    padding: 20px;
+    background: white;
+    min-height: 500px;
+}
+
+.room-item {
+    padding: 15px;
+}
+
+a.add-room {
+    cursor: pointer;
+    background-color: #4C448F;
+    text-transform: uppercase;
+    padding: 0.8em;
+    color: white;
+    font-family: Gotham-Bold, arial;
+    font-size: 16px;
+    border-bottom: 3px solid #352F64;
+}
+
+.center-text {
+    text-align: center;
+}
+
 .recap {
-    border: 1px solid blue;
+    border: 3px solid #4C448F;
     height: 80vh;
 }
+
 .page {
-    margin-top: 10vh;
+    margin-top: 110px;
 }
 
 .search-bar {
@@ -36,47 +83,48 @@ li {
 }
 
 /* Style the tab */
+
 .tab {
-   float: left;
-   border: 1px solid #ccc;
-   background-color: #f1f1f1;
-   width: 30%;
-   height: 300px;
+    float: left;
+    background-color: #f1f1f1;
+    height: 300px;
+    padding: 0;
 }
 
 /* Style the buttons that are used to open the tab content */
+
 .tab button {
-   display: block;
-   background-color: inherit;
-   color: black;
-   padding: 22px 16px;
-   width: 100%;
-   border: none;
-   outline: none;
-   text-align: left;
-   cursor: pointer;
-   transition: 0.3s;
+    display: block;
+    background-color: inherit;
+    color: black;
+    padding: 22px 16px;
+    width: 100%;
+    border: none;
+    outline: none;
+    text-align: left;
+    cursor: pointer;
+    transition: 0.3s;
 }
 
 /* Change background color of buttons on hover */
+
 .tab button:hover {
-   background-color: #ddd;
+    background-color: #ddd;
 }
 
 /* Create an active/current "tab button" class */
+
 .tab button.active {
-   background-color: #ccc;
+    background-color: white;
 }
 
 /* Style the tab content */
+
 .room-items {
-   float: left;
-   padding: 0px 12px;
-   border: 1px solid #ccc;
-   width: 70%;
-   border-left: none;
-   height: 300px;
+    float: left;
+    height: 300px;
 }
+
 /* modal recap */
 
 .modal.right .modal-dialog {
@@ -92,6 +140,7 @@ li {
         height: 75vh;
     }
 }
+
 .modal.right .modal-content {
     height: 100%;
     overflow-y: auto;
@@ -101,7 +150,7 @@ li {
     padding: 15px 15px 80px;
 }
 
-.btn-modal-recap{
+.btn-modal-recap {
     background-color: #4C448F;
 }
 
@@ -109,21 +158,23 @@ li {
     background-color: deeppink;
 }
 
-.btn-modal-recap:visited  {
+.btn-modal-recap:visited {
     background-color: #4C448F;
 }
 
-
 /*---right---*/
-.modal.right.fade .modal-dialog{
+
+.modal.right.fade .modal-dialog {
     right: -320px;
     transition: opacity 0.3s linear, right 0.5s ease-out;
 }
 
-.modal.right.fade.in .modal-dialog{
+.modal.right.fade.in .modal-dialog {
     right: 0;
 }
+
 /* ----- MODAL STYLE ----- */
+
 .modal-content {
     border-radius: 0;
     border: none;
@@ -131,12 +182,8 @@ li {
 }
 
 .modal-header {
-    border-bottom-color:
-            #EEEEEE
-;
+    border-bottom-color: #EEEEEE;
     background-color: white;
-    color:
-            #4C448F
-;
+    color: #4C448F;
     text-align: center;
 }

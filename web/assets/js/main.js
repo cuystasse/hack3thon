@@ -17,8 +17,7 @@ function openRoom(evt, roomName) {
     $('.room-link').removeClass('active');
 
     // Show the current tab, and add an "active" class to the link that opened the tab
-    document.getElementById(roomName).style.display = "block";
-    // $('#roomName').show();
+    document.getElementById(roomName).style.display = "contents";
     evt.currentTarget.className += " active";
 
 }
