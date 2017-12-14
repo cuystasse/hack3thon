@@ -16,12 +16,13 @@
                         {# !! PENSER A METTRE UN class="active" SEULEMENT SUR LE PREMIER ELEMENT !!
                         changer la ligne en dessous en dynamique mac #}
                         <li class="room-link active"><a href="#tab" data-toggle="pill">Chambre 3</a></li>
-                        <button class="add-room">Ajouter une pièce</button>                        
+                        <a data-toggle="modal" href="#myRoomCategoryModal"
+                           class="add-room btn btn-primary btn-lg">Ajouter une pièce</a>
                     </div>
                     <div class="room-items col-xs-8">
                         {# !! PENSER A METTRE UN class="active" SEULEMENT SUR LE PREMIER ELEMENT !!
                         changer la ligne en dessous en dynamique mac #}
-                        <li class="tab-pane room-item active" id="tab">Chaise roumaine</li>
+                        <div class="tab-pane room-item active" id="tab">Cuisine test placeholder</div>
                         <button class="add-item">Ajouter un meuble</button>
                     </div>
                 </div>
@@ -30,6 +31,27 @@
                 {# changer la ligne en dessous en dynamique mac #}
                 <li class="recap-item">Aie Aie Aie</li>
             </div>
+
+            <!-- Modal -->
+            <div class="modal fade" id="myRoomCategoryModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                            <h4 class="modal-title">Ajouter une pièce</h4>
+                        </div>
+                        <div class="modal-body row">
+                            {% for roomCategory in roomCategories %}
+                                <div data-id="{{ roomCategory.id }}" class="roomCategoryModal col-md-6 text-center">{{ roomCategory.name }}</div>
+                            {% endfor %}
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+                        </div>
+                    </div><!-- /.modal-content -->
+                </div><!-- /.modal-dialog -->
+            </div><!-- /.modal -->
+
         </div>
     </div>
 {% endblock %}
