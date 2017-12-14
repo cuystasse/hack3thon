@@ -30,7 +30,7 @@ $(".search-bar").keyup(function () {
                                 $('.tab-pane').val(itemId);
                             }
                         })
-                    if ($('.room-item[data-id=tab-' + itemId + ']').length === 0) {
+                    if ($('.active .room-item[data-id=tab-' + itemId + ']').length === 0) {
                         elm = $("<li>" + $(this).text() + "<span class='badge'>" + 1 + "</span></li>")
                             .addClass('tab-pane room-item col-sm-6')
                             .attr('data-id', 'tab-' + itemId)
@@ -53,10 +53,10 @@ $(".search-bar").keyup(function () {
                         });
                         elm.append(button_delete);
 
-                        $('.items-div .row').append(elm);
+                        $('.items-div .row .active').append(elm);
                     }
                     else {
-                        span = $('.room-item[data-id=tab-' + itemId + '] .badge');
+                        span = $('.active .room-item[data-id=tab-' + itemId + '] .badge');
                         // count = parseInt(span.text(), 10) + 1;
                         count = span.text();
                         count++;
