@@ -1,4 +1,4 @@
-// $( document ).ready(function() {
+
 $(".search-bar").keyup(function () {
     var itemType = $(this).val();
     if (itemType.length >= 2) {
@@ -61,4 +61,3 @@ $(".search-bar").keyup(function () {
         $('#autocomplete').html('');
     }
 });
-// });
