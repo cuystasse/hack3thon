@@ -15,29 +15,10 @@
                     <div class="room-links tab">
                         {# UN id='defaultOpen' DOIT ETRE MIS SUR LE PREMIER ELEMENT DANS LE CAS OU PLUSIEURS PIECES SONT LA DE BASE
                         DONC A PRIORI IL NE FAUDRA PAS LE METTRE #}
-                        <button class="room-link" onclick="openRoom(event, 'cuisine{#nom de la pièce#}')" id="defaultOpen">{# nom de la pièce #}Chambre 3
-                        </button>
-                        <button class="room-link" onclick="openRoom(event, 'salle de bain{#nom de la pièce#}')">{# nom de la pièce #}Chambre 3
-                        </button>
-                        <button class="room-link" onclick="openRoom(event, 'cave{#nom de la pièce#}')">{# nom de la pièce #}Chambre 3
-                        </button>
-                        <button class="room-link" onclick="openRoom(event, 'donjon{#nom de la pièce#}')">{# nom de la pièce #}Chambre 3
-                        </button>
-                        <button class="add-room">Ajouter une pièce</button>
+                        <a data-toggle="modal" href="#myRoomCategoryModal"
+                           class="add-room btn btn-primary btn-lg">Ajouter une pièce</a>
                     </div>
-                    <div class="col-xs-8">
-                        <div class="room-items" id="cuisine{# nom de la pièce #}">
-                            <li class="room-item">Hola mis amigos</li>
-                        </div>
-                        <div class="room-items" id="salle de bain{# nom de la pièce #}">
-                            <li class="room-item">Hola mis amigas</li>
-                        </div>
-                        <div class="room-items" id="cave{# nom de la pièce #}">
-                            <li class="room-item">Hola mis amigis</li>
-                        </div>
-                        <div class="room-items" id="donjon{# nom de la pièce #}">
-                            <li class="room-item">Hola mis amigus</li>
-                        </div>
+                    <div class="col-xs-8 divRooms">
                         <button class="add-item">Ajouter un meuble</button>
                     </div>
                 </div>
@@ -71,6 +52,27 @@
                 {# changer la ligne en dessous en dynamique mac #}
                 <li class="recap-item">Aie Aie Aie</li>
             </div>
+
+            <!-- Modal -->
+            <div class="modal fade" id="myRoomCategoryModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                            <h4 class="modal-title">Ajouter une pièce</h4>
+                        </div>
+                        <div class="modal-body row">
+                            {% for roomCategory in roomCategories %}
+                                <div data-id="{{ roomCategory.id }}" class="roomCategoryModal col-md-6 text-center">{{ roomCategory.name }}</div>
+                            {% endfor %}
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+                        </div>
+                    </div><!-- /.modal-content -->
+                </div><!-- /.modal-dialog -->
+            </div><!-- /.modal -->
+
         </div>
     </div>
 {% endblock %}
