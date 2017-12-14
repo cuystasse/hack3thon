@@ -24,5 +24,9 @@ function openRoom(evt, roomName) {
 
 }
 
+
+$('.room-links').click(function(){
+    $('#searchbar').focus();
+});
+
 document.getElementById("defaultOpen").click();
-// $('#defaultOpen').trigger("click");

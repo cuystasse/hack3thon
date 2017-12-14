@@ -9,23 +9,22 @@
                 <h3>Définissez la liste des objets que vous souhaitez déménager.</h3>
             </div>
             <div class="search-div col-sm-2">
-                <input autocomplete="off" class="search-bar" placeholder="Recherche"/>
+                <input autocomplete="off" class="search-bar" id="searchbar" placeholder="Recherche"/>
                 <div id="autocomplete" class="search-list">
                 </div>
             </div>
             <div class="content col-sm-8">
                 <div class="row">
                     <div class="room-links tab col-xs-4">
-                        {# UN id='defaultOpen' DOIT ETRE MIS SUR LE PREMIER ELEMENT DANS LE CAS OU PLUSIEURS PIECES SONT LA DE BASE
-                        DONC A PRIORI IL NE FAUDRA PAS LE METTRE #}
-                        <div class="center-text">
+                        <div class="center-text add-room-button">
                             <a data-toggle="modal" href="#myRoomCategoryModal" class="add-room">Ajouter une pièce</a>
                         </div>
                     </div>
                     <div class="col-xs-8 items-div">
                         <div class="row">
+
                         </div>
-                        <div class="center-text divRooms">
+                        <div class="center-text add-item-button">
                             <a class="add-room">Ajouter un meuble</a>
                         </div>
                     </div>
@@ -55,9 +54,6 @@
                         </div><!-- /.modal-content -->
                     </div><!-- /.modal-dialog -->
                 </div><!-- /.modal -->
-
-                {# changer la ligne en dessous en dynamique mac #}
-                <li class="recap-item">Aie Aie Aie</li>
             </div>
 
             <!-- Modal -->

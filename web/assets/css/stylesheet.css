@@ -1,6 +1,5 @@
-@font-face {
-    font-family: Gotham-Black;
-    src: url('/bundles/app/frontend/fonts/Gotham/Gotham-Black.eot');
+html {
+    font-family: arial;
 }
 
 li {
@@ -21,6 +20,7 @@ li {
 
 .navbar {
     position: fixed;
+    z-index: 100;
 }
 
 .titles {
@@ -57,7 +57,18 @@ a.add-room {
 
 .center-text {
     text-align: center;
-    margin-top: 30px;
+}
+
+.divRooms {
+    margin-top: 60px;
+}
+
+.add-room-button {
+    margin-top: 40px;
+}
+
+.add-item-button {
+    margin-top: 20px;
 }
 
 .recap {
