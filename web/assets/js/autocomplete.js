@@ -23,6 +23,14 @@ $(".search-bar").keyup(function () {
                 $('#autocomplete .list-element-you-know').on('click', function () {
                     $('.search-bar').val($(this).text());
                     var itemId = $(this).data('listid');
+                        $.ajax({
+                            type: "POST",
+                            url: "/item/newitem/" + itemId,
+                            timeout: 3000,
+                            success: function () {
+                                $('.tab-pane').val(itemId);
+                            }
+                        })
                     if ($('#tab-' + itemId).length === 0) {
                         elm = $("<li class=\"tab-pane room-item\" id=\"tab-" + itemId + "\">" + $(this).text() + "<span class='badge'>1</span></li>");
 
@@ -30,7 +38,7 @@ $(".search-bar").keyup(function () {
 
                         button_delete.on('click', function (e) {
                             e.preventDefault();
-                             $(this).parent().remove();
+                            $(this).parent().remove();
                         });
                         elm.append(button_delete);
 
