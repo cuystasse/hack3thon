@@ -3,22 +3,56 @@ li {
 }
 
 .content {
-    border: 1px solid black;
+    border: 3px solid #4C448F;
     height: 80vh;
+    background: #F0F0F0;
 }
 
 .search-div {
-    border: 1px solid red;
+    border: 3px solid #4C448F;
     overflow: hidden;
     height: 80vh;
 }
 
+.navbar {
+    position: fixed;
+}
+
+.titles {
+    text-align: center;
+}
+
+.add-item {
+    cursor: pointer;
+    float: right;
+    position: absolute;
+    margin-top: 20px;
+}
+
+.items-div {
+    padding: 20px;
+    background: white;
+    min-height: 500px;
+}
+
+.room-item {
+    padding: 15px;
+}
+
+.add-room {
+    cursor: pointer;
+}
+
+.center-text {
+    text-align: center;
+}
 .recap {
-    border: 1px solid blue;
+    border: 3px solid #4C448F;
     height: 80vh;
 }
+
 .page {
-    margin-top: 10vh;
+    margin-top: 110px;
 }
 
 .search-bar {
@@ -38,10 +72,9 @@ li {
 /* Style the tab */
 .tab {
    float: left;
-   border: 1px solid #ccc;
    background-color: #f1f1f1;
-   width: 30%;
    height: 300px;
+   padding: 0;
 }
 
 /* Style the buttons that are used to open the tab content */
@@ -65,15 +98,11 @@ li {
 
 /* Create an active/current "tab button" class */
 .tab button.active {
-   background-color: #ccc;
+   background-color: white;
 }
 
 /* Style the tab content */
 .room-items {
    float: left;
-   padding: 0px 12px;
-   border: 1px solid #ccc;
-   width: 70%;
-   border-left: none;
    height: 300px;
 }
