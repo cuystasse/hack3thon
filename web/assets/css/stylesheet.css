@@ -13,7 +13,8 @@ li {
 }
 
 .search-div {
-    border: 3px solid #4C448F;
+    border-top: 3px solid #4C448F;
+    border-bottom: 3px solid #4C448F;
     overflow: hidden;
     height: 80vh;
 }
@@ -44,6 +45,13 @@ li {
     padding: 15px;
 }
 
+.karura {
+    height: 100%;
+    position: fixed;
+    margin-left: 30%;
+    z-index: 200;
+}
+
 a.add-room {
     cursor: pointer;
     background-color: #4C448F;
@@ -72,7 +80,8 @@ a.add-room {
 }
 
 .recap {
-    border: 3px solid #4C448F;
+    border-top: 3px solid #4C448F;
+    border-bottom: 3px solid #4C448F;
     height: 80vh;
 }
 

@@ -29,4 +29,8 @@ $('.room-links').click(function(){
     $('#searchbar').focus();
 });
 
+$(function () {
+  $('.karura').fadeOut('fast')
+});
+
 document.getElementById("defaultOpen").click();
