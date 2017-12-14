@@ -10,6 +10,15 @@ $('.roomCategoryModal').on('click', function (e) {
         roomName += ' ' + (numberOfRoomCat + 1).toString();
     }
 
+    $.ajax({
+        type: "POST",
+        url: "/room/newroom/" + $(this).data('id') + "/" + roomName,
+        timeout: 3000,
+        success: function (){
+            $(this).data('id');
+        }
+    });
+
     // var mylink = $('<li value="' + $(this).data('id') + '" class="room-link"><a href="#tab' + $(this).data('id') + numberOfRoomCat + '" data-toggle="pill">' + roomName + '</a></li>');
     var mylink = $('<button></button>')
         .addClass('room-link')
