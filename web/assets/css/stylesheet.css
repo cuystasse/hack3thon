@@ -34,3 +34,69 @@ li {
     background: lightblue;
     padding: 1vh;
 }
+
+/* modal recap */
+
+.modal.right .modal-dialog {
+    position: fixed;
+    margin: 20vh 10vw;
+    width: 80vw;
+    height: auto;
+    transform: translate3d(0%, 0, 0);
+}
+
+@media screen and (max-width: 550px) {
+    .modal.right .modal-dialog {
+        height: 75vh;
+    }
+}
+.modal.right .modal-content {
+    height: 100%;
+    overflow-y: auto;
+}
+
+.modal.right .modal-body {
+    padding: 15px 15px 80px;
+}
+
+.btn-modal-recap{
+    background-color: #4C448F;
+}
+
+.btn-modal-recap:hover {
+    background-color: deeppink;
+}
+
+.btn-modal-recap:visited  {
+    background-color: #4C448F;
+}
+
+
+/*---right---*/
+.modal.right.fade .modal-dialog{
+    right: -320px;
+    transition: opacity 0.3s linear, right 0.5s ease-out;
+}
+
+.modal.right.fade.in .modal-dialog{
+    right: 0;
+}
+/* ----- MODAL STYLE ----- */
+.modal-content {
+    border-radius: 0;
+    border: none;
+    text-align: center;
+}
+
+.modal-header {
+    border-bottom-color:
+            #EEEEEE
+;
+    background-color: white;
+    color:
+            #4C448F
+;
+    text-align: center;
+}
+
+
