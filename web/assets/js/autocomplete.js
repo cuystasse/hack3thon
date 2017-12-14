@@ -35,20 +35,22 @@ $(".search-bar").keyup(function () {
                             .addClass('tab-pane room-item col-sm-6')
                             .attr('data-id', 'tab-' + itemId)
 
-                        button_delete = $("<button><span class=\"glyphicon glyphicon-trash\"></span></button>");
+                        button_delete = $("<button value=\""+104+"\"><span class=\"glyphicon glyphicon-trash\"></span></button>");
 
                         button_delete.on('click', function (e) {
                             e.preventDefault();
-                            // var itemRmId = $(this).val();
-                            // console.log(itemRmId);
-                            // $.ajax({
-                            //     type: "POST",
-                            //     url: "/item/delete/" + itemRmId,
-                            //     timeout: 3000,
-                            //     success: function () {
-                            //         $('.tab-pane').val(itemRmId);
-                            //     }
-                            // })
+                            var itemRmId = $(this).val();
+                            console.log(itemRmId);
+                            $.ajax({
+                                type: "POST",
+                                url: "/item/deleteItem/" + itemRmId,
+                                timeout: 3000,
+                                success: function (response) {
+                                    console.log(response);
+                                    $('.items-div').html(response);
+                                }
+
+                            })
                             $(this).parent().remove();
                         });
                         elm.append(button_delete);

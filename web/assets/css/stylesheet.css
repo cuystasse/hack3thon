@@ -52,6 +52,12 @@ li {
     z-index: 200;
 }
 
+.cochon {
+    position: fixed;
+    margin-left: 81%;
+    z-index: 205;
+}
+
 a.add-room {
     cursor: pointer;
     background-color: #4C448F;

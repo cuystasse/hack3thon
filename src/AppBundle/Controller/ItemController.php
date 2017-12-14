@@ -6,7 +6,9 @@ use AppBundle\Entity\Item;
 use AppBundle\Form\ItemType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component\HttpFoundation\Request;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 
 /**
  * Item controller.
@@ -141,16 +143,18 @@ class ItemController extends Controller
     /**
      * @param Request $request
      * @param Item $item
-     * @Route("/deleteitem/{id}", name="deleteitem-id")
+     * @Route("/deleteItem/{id}", name="deleteitem-id")
      * @Method({"GET", "POST"}))
      */
-    public function autoDelete(Request $request, Item $item)
+    public function autoDelete(Request $request, \AppBundle\Entity\Item $item)
     {
         $em = $this->getDoctrine()->getManager();
         if ($request->isXmlHttpRequest()) {
+            $oldItem = $item->getRoom();
             $em->remove($item);
             $em->flush();
-            return $this->redirectToRoute('homepage');
+            $items = $em->getRepository(\AppBundle\Entity\Item::class)->findByRoom($oldItem);
+            return new Response('toto');
         }
     }
 
