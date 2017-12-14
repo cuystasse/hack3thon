@@ -32,7 +32,7 @@ $(".search-bar").keyup(function () {
                         })
                     if ($('.room-item[data-id=tab-' + itemId + ']').length === 0) {
                         elm = $("<li>" + $(this).text() + "<span class='badge'>" + 1 + "</span></li>")
-                            .addClass('tab-pane room-item')
+                            .addClass('tab-pane room-item col-sm-6')
                             .attr('data-id', 'tab-' + itemId)
 
                         button_delete = $("<button><span class=\"glyphicon glyphicon-trash\"></span></button>");
@@ -53,8 +53,7 @@ $(".search-bar").keyup(function () {
                         });
                         elm.append(button_delete);
 
-
-                        $('.room-items').append(elm);
+                        $('.items-div .row').append(elm);
                     }
                     else {
                         span = $('.room-item[data-id=tab-' + itemId + '] .badge');
