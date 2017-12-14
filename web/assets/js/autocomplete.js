@@ -20,8 +20,8 @@ $(".search-bar").keyup(function () {
                 }
 
                 $('#autocomplete').html(html);
+
                 $('#autocomplete li').on('click', function () {
-                    $('.search-bar').val($(this).text());
                     var itemId = $(this).data('listid');
                     if ($('#tab-' + itemId).length === 0) {
                         elm = $("<li class=\"tab-pane room-item\" id=\"tab-" + itemId + "\">" + $(this).text() + "<span class='badge'>1</span></li>");
@@ -30,7 +30,7 @@ $(".search-bar").keyup(function () {
 
                         button_delete.on('click', function (e) {
                             e.preventDefault();
-                             $(this).parent().remove();
+                            $(this).parent().remove();
                         });
                         elm.append(button_delete);
 
@@ -41,6 +41,15 @@ $(".search-bar").keyup(function () {
                         span = $('#tab-' + itemId + " .badge");
                         count = parseInt(span.text()) + 1;
                         span.text(count);
+
+                        // pulsing span
+                        span.animate({
+                            opacity: 0.5,
+                        }, 300)
+                            .animate({
+                                opacity: 1,
+                            }, 300);
+
                     }
 
                 });
