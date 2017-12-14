@@ -103,14 +103,17 @@ li {
 
 .btn-modal-recap{
     background-color: #4C448F;
+    color: white;
 }
 
 .btn-modal-recap:hover {
     background-color: deeppink;
+    color: white;
 }
 
 .btn-modal-recap:visited  {
     background-color: #4C448F;
+    color:white;
 }
 
 

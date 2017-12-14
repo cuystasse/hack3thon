@@ -2,20 +2,6 @@
 
 {% block body %}
     <div class="container-fluid">
-        <div class="row">
-            <div class="col-xs-3">
-                <h2>1.Ajouter une pièce</h2>
-            </div>
-            <div class="col-xs-3">
-                <h2 class="text-center">2. Ajouter les meubles de la pièce</h2>
-            </div>
-            <div class="col-xs-3">
-                <h2>3.Valider votre déménagement</h2>
-            </div>
-            <div class="col-xs-3">
-                <h2>4.Imprimer votre récapitulatif</h2>
-            </div>
-        </div>
         <div class="row page">
             <div class="search-div col-sm-2">
                 <input autocomplete="off" class="search-bar" placeholder="Recherche"/>
@@ -34,12 +20,10 @@
                         <button class="add-item">Ajouter un meuble</button>
                     </div>
                 </div>
-            </div>
 
-            <div class="recap col-sm-2">
-                <button type="button" class="btn btn-default btn-modal-recap" data-toggle="modal"
+                <button type="button" class="btn btn-default btn-modal-recap pull-right" data-toggle="modal"
                         data-target=".modal-recap-lg">
-                    <span class="glyphicon glyphicon-list-alt"> Recapitulatif</span>
+                    <span class="glyphicon glyphicon-list-alt">Imprimer votre liste</span>
                 </button>
 
                 <div class="modal right fade fade modal-recap-lg " tabindex="-1" role="dialog"
@@ -87,6 +71,8 @@
                     </div><!-- /.modal-content -->
                 </div><!-- /.modal-dialog -->
             </div><!-- /.modal -->
+        </div>
+        <div class="recap col-sm-2">
 
         </div>
     </div>
