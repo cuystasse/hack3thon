@@ -1,4 +1,3 @@
-
 $(".search-bar").keyup(function () {
     var itemType = $(this).val();
     if (itemType.length >= 2) {
@@ -12,7 +11,7 @@ $(".search-bar").keyup(function () {
                 html = "";
                 var currentCat = '';
                 for (itemtype in itemtypes) {
-                    if (currentCat != itemtypes[itemtype].icatName) {
+                    if (currentCat !== itemtypes[itemtype].icatName) {
                         currentCat = itemtypes[itemtype].icatName;
                         html += "<li class='catpppp'>" + itemtypes[itemtype].icatName + "</li>";
                     }
@@ -31,8 +30,10 @@ $(".search-bar").keyup(function () {
                                 $('.tab-pane').val(itemId);
                             }
                         })
-                    if ($('#tab-' + itemId).length === 0) {
-                        elm = $("<li class=\"tab-pane room-item\" id=\"tab-" + itemId + "\">" + $(this).text() + "<span class='badge'>1</span></li>");
+                    if ($('.room-item[data-id=tab-' + itemId + ']').length === 0) {
+                        elm = $("<li>" + $(this).text() + "<span class='badge'>" + 1 + "</span></li>")
+                            .addClass('tab-pane room-item')
+                            .attr('data-id', 'tab-' + itemId)
 
                         button_delete = $("<button><span class=\"glyphicon glyphicon-trash\"></span></button>");
 
@@ -56,10 +57,21 @@ $(".search-bar").keyup(function () {
                         $('.room-items').append(elm);
                     }
                     else {
-                        span = $('#tab-' + itemId + " .badge");
-                        count = parseInt(span.text() + 1);
-                        console.log(span.text());
+                        span = $('.room-item[data-id=tab-' + itemId + '] .badge');
+                        // count = parseInt(span.text(), 10) + 1;
+                        count = span.text();
+                        count++;
+                        // span.text(count.toString(10));
                         span.text(count);
+
+                        // pulsing span
+                        span.animate({
+                            opacity: 0.5,
+                        }, 300)
+                            .animate({
+                                opacity: 1,
+                            }, 300);
+
                     }
 
                 });
