@@ -139,6 +139,22 @@ class ItemController extends Controller
     }
 
     /**
+     * @param Request $request
+     * @param Item $item
+     * @Route("/deleteitem/{id}", name="deleteitem-id")
+     * @Method({"GET", "POST"}))
+     */
+    public function autoDelete(Request $request, Item $item)
+    {
+        $em = $this->getDoctrine()->getManager();
+        if ($request->isXmlHttpRequest()) {
+            $em->remove($item);
+            $em->flush();
+            return $this->redirectToRoute('homepage');
+        }
+    }
+
+    /**
      * Creates a form to delete a item entity.
      *
      * @param Item $item The item entity
