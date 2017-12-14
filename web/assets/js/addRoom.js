@@ -37,7 +37,7 @@ $('.roomCategoryModal').on('click', function (e) {
     var mybody = $('<div></div>')
         .addClass('room-items')
         .attr('id', $(this).data('id') + '_' + (numberOfRoomCat + 1).toString());
-    $('.divRooms .add-item').after(mybody);
+    $('.items-div .row').append(mybody);
 
     // close modal
     $('#myRoomCategoryModal').modal('toggle');

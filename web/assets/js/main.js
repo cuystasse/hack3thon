@@ -7,7 +7,8 @@ function openRoom(evt, roomName) {
     // for (i = 0; i < roomitems.length; i++) {
     //     roomitems[i].style.display = "none";
     // }
-    $('.room-items').hide();
+    $('.room-items').hide()
+                    .removeClass('active');
 
     // Get all elements with class="room-link" and remove the class "active"
     // roomlink = document.getElementsByClassName("room-link");
@@ -18,6 +19,7 @@ function openRoom(evt, roomName) {
 
     // Show the current tab, and add an "active" class to the link that opened the tab
     document.getElementById(roomName).style.display = "contents";
+    $('#'+roomName).addClass('active');
     evt.currentTarget.className += " active";
 
 }
