@@ -53,4 +53,8 @@ $(".search-bar").keyup(function () {
         $('#autocomplete').html('');
     }
 });
+<<<<<<< HEAD
 // });
+=======
+// });
+>>>>>>> 38392b65049e2cd410e8023edcbdbf0093fbee87
