@@ -3,6 +3,7 @@
 namespace AppBundle\Controller;
 
 use AppBundle\Entity\Item;
+use AppBundle\Form\ItemType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component\HttpFoundation\Request;
@@ -116,6 +117,25 @@ class ItemController extends Controller
         }
 
         return $this->redirectToRoute('item_index');
+    }
+
+    /**
+     * @param Request $request
+     * @param \AppBundle\Entity\ItemType $itemType
+     * @Route("/newitem/{id}", name="newitem-id")
+     * @Method({"GET", "POST"})
+     */
+    public function autoNew(Request $request,\AppBundle\Entity\ItemType $itemType)
+    {
+        $em = $this->getDoctrine()->getManager();
+        if ($request->isXmlHttpRequest()) {
+            $item = new Item();
+            $item->setName(uniqid())->setItemType($itemType);
+            $em->persist($item);
+            $em->flush();
+
+            return $this->redirectToRoute('homepage');
+        }
     }
 
     /**

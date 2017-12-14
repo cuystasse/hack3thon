@@ -1,3 +1,8 @@
+@font-face {
+    font-family: Gotham-Black;
+    src: url('/bundles/app/frontend/fonts/Gotham/Gotham-Black.eot');
+}
+
 li {
     list-style: none;
 }
@@ -39,13 +44,21 @@ li {
     padding: 15px;
 }
 
-.add-room {
+a.add-room {
     cursor: pointer;
+    background-color: #4C448F;
+    text-transform: uppercase;
+    padding: 0.8em;
+    color: white;
+    font-family: Gotham-Bold, arial;
+    font-size: 16px;
+    border-bottom: 3px solid #352F64;
 }
 
 .center-text {
     text-align: center;
 }
+
 .recap {
     border: 3px solid #4C448F;
     height: 80vh;
@@ -70,39 +83,107 @@ li {
 }
 
 /* Style the tab */
+
 .tab {
-   float: left;
-   background-color: #f1f1f1;
-   height: 300px;
-   padding: 0;
+    float: left;
+    background-color: #f1f1f1;
+    height: 300px;
+    padding: 0;
 }
 
 /* Style the buttons that are used to open the tab content */
+
 .tab button {
-   display: block;
-   background-color: inherit;
-   color: black;
-   padding: 22px 16px;
-   width: 100%;
-   border: none;
-   outline: none;
-   text-align: left;
-   cursor: pointer;
-   transition: 0.3s;
+    display: block;
+    background-color: inherit;
+    color: black;
+    padding: 22px 16px;
+    width: 100%;
+    border: none;
+    outline: none;
+    text-align: left;
+    cursor: pointer;
+    transition: 0.3s;
 }
 
 /* Change background color of buttons on hover */
+
 .tab button:hover {
-   background-color: #ddd;
+    background-color: #ddd;
 }
 
 /* Create an active/current "tab button" class */
+
 .tab button.active {
-   background-color: white;
+    background-color: white;
 }
 
 /* Style the tab content */
+
 .room-items {
-   float: left;
-   height: 300px;
+    float: left;
+    height: 300px;
+}
+
+/* modal recap */
+
+.modal.right .modal-dialog {
+    position: fixed;
+    margin: 20vh 10vw;
+    width: 80vw;
+    height: auto;
+    transform: translate3d(0%, 0, 0);
+}
+
+@media screen and (max-width: 550px) {
+    .modal.right .modal-dialog {
+        height: 75vh;
+    }
+}
+
+.modal.right .modal-content {
+    height: 100%;
+    overflow-y: auto;
+}
+
+.modal.right .modal-body {
+    padding: 15px 15px 80px;
+}
+
+.btn-modal-recap {
+    background-color: #4C448F;
+}
+
+.btn-modal-recap:hover {
+    background-color: deeppink;
+}
+
+.btn-modal-recap:visited {
+    background-color: #4C448F;
+}
+
+/*---right---*/
+
+.modal.right.fade .modal-dialog {
+    right: -320px;
+    transition: opacity 0.3s linear, right 0.5s ease-out;
+}
+
+.modal.right.fade.in .modal-dialog {
+    right: 0;
+}
+
+/* ----- MODAL STYLE ----- */
+
+.modal-content {
+    border-radius: 0;
+    border: none;
+    text-align: center;
+}
+
+.modal-header {
+    border-bottom-color: #EEEEEE;
+    background-color: white;
+    color: #4C448F;
+    text-align: center;
 }

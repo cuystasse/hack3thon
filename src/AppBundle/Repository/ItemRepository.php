@@ -10,5 +10,8 @@ namespace AppBundle\Repository;
  */
 class ItemRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function addItemLike($item, $room=null, $itemType)
+    {
 
+    }
 }
