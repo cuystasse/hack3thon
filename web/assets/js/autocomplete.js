@@ -23,13 +23,22 @@ $(".search-bar").keyup(function () {
                 $('#autocomplete li').on('click', function () {
                     $('.search-bar').val($(this).text());
                     var itemId = $(this).data('listid');
-                    console.log(itemId);
                     if ($('#tab-' + itemId).length === 0) {
-                        elm = $("<li class=\"tab-pane room-item\" id=\"tab-" + itemId + "\">" + $(this).text() + "<span class='badge'>1</span></li>")
+                        elm = $("<li class=\"tab-pane room-item\" id=\"tab-" + itemId + "\">" + $(this).text() + "<span class='badge'>1</span></li>");
+
+                        button_delete = $("<button><span class=\"glyphicon glyphicon-trash\"></span></button>");
+
+                        button_delete.on('click', function (e) {
+                            e.preventDefault();
+                             $(this).parent().remove();
+                        });
+                        elm.append(button_delete);
+
+
                         $('.room-items').append(elm);
                     }
                     else {
-                        span = $('#tab-' + itemId + " span:last-child");
+                        span = $('#tab-' + itemId + " .badge");
                         count = parseInt(span.text()) + 1;
                         span.text(count);
                     }
