@@ -201,7 +201,7 @@ a.add-room {
     color: white;
 }
 
-.btn-modal-recap:visited {
+.btn-modal-recap:focus {
     background-color: #4C448F;
     color:white;
 }
@@ -230,4 +230,21 @@ a.add-room {
     background-color: white;
     color: #4C448F;
     text-align: center;
+}
+
+.print {
+    background-color: #4C448F;
+    border-bottom-color: transparent;
+    color: white;
+}
+
+.print:hover {
+    background-color: #E54380;
+    border-bottom-color: transparent;
+    color: white;
+}
+
+.print:focus {
+    background-color: #4C448F;
+    color: white;
 }
