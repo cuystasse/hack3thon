@@ -26,6 +26,10 @@ $(function () {
 
 $('.add-room').click();
 
+$('#myRoomCategoryModal').on('hidden.bs.modal', function (e) {
+    $('#searchbar').focus();
+});
+
 $('.room-links').click(function(){
     $('#searchbar').focus();
 });
