@@ -24,17 +24,13 @@
                     </div>
                     <div class="col-xs-8 items-div">
                         <div class="row">
-
-                        </div>
-                        <div class="center-text add-item-button">
-                            <a class="add-room">Ajouter un meuble</a>
                         </div>
                     </div>
                 </div>
 
                 <button type="button" class="btn btn-default btn-modal-recap pull-right" data-toggle="modal"
                         data-target=".modal-recap-lg">
-                    <span class="glyphicon glyphicon-list-alt">Imprimer votre liste</span>
+                    <span class="glyphicon glyphicon-list-alt"></span> Récapitulatif de l'inventaire
                 </button>
 
                 <div class="modal right fade fade modal-recap-lg " tabindex="-1" role="dialog"
@@ -47,10 +43,12 @@
                                 <h4 class="modal-title"> Récapitulatif </h4>
                             </div>
                             <div class="modal-body">
-                                <p>{# ici sera inscrit dans le marbre le récapitulatif du déménagement #}
-                                    trois chaises peau de cougar</p>
+                                <p>{# ici sera inscrit dans le marbre le récapitulatif du déménagement #}</p>
                             </div>
                             <div class="modal-footer">
+                                <button type="submit" class=" btn btn-default print"><span
+                                            class="glyphicon glyphicon-print "></span> Imprimer
+                                </button>
                                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                             </div>
                         </div><!-- /.modal-content -->
@@ -81,9 +79,6 @@
                     </div><!-- /.modal-content -->
                 </div><!-- /.modal-dialog -->
             </div><!-- /.modal -->
-        </div>
-        <div class="recap col-sm-2">
-
         </div>
     </div>
 {% endblock %}
