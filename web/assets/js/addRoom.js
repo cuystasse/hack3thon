@@ -30,9 +30,8 @@ $('.roomCategoryModal').on('click', function (e) {
         openRoom(e, $(this).data('divid'));
     });
 
-    $('.room-links .add-room').before(mylink);
-
-    // add body
+    $('.room-links .add-room-button').before(mylink);
+        // add body
     // var mybody = $('<div class="tab-pane room-item" id="tab' + $(this).data('id') + numberOfRoomCat + '">content</div>');
     var mybody = $('<div></div>')
         .addClass('room-items')

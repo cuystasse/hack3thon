@@ -1,6 +1,5 @@
-@font-face {
-    font-family: Gotham-Black;
-    src: url('/bundles/app/frontend/fonts/Gotham/Gotham-Black.eot');
+html {
+    font-family: arial;
 }
 
 li {
@@ -14,13 +13,15 @@ li {
 }
 
 .search-div {
-    border: 3px solid #4C448F;
+    border-top: 3px solid #4C448F;
+    border-bottom: 3px solid #4C448F;
     overflow: hidden;
     height: 80vh;
 }
 
 .navbar {
     position: fixed;
+    z-index: 100;
 }
 
 .titles {
@@ -44,6 +45,19 @@ li {
     padding: 15px;
 }
 
+.karura {
+    height: 100%;
+    position: fixed;
+    margin-left: 30%;
+    z-index: 200;
+}
+
+.cochon {
+    position: fixed;
+    margin-left: 81%;
+    z-index: 205;
+}
+
 a.add-room {
     cursor: pointer;
     background-color: #4C448F;
@@ -57,11 +71,23 @@ a.add-room {
 
 .center-text {
     text-align: center;
-    margin-top: 30px;
+}
+
+.divRooms {
+    margin-top: 60px;
+}
+
+.add-room-button {
+    margin-top: 40px;
+}
+
+.add-item-button {
+    margin-top: 20px;
 }
 
 .recap {
-    border: 3px solid #4C448F;
+    border-top: 3px solid #4C448F;
+    border-bottom: 3px solid #4C448F;
     height: 80vh;
 }
 
