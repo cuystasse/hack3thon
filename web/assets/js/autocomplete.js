@@ -22,7 +22,6 @@ $(".search-bar").keyup(function () {
                 $('#autocomplete .list-element-you-know').on('click', function () {
                     var itemId = $(this).data('listid');
                     var activeRoom = 40;
-                    alert('OK');
                         $.ajax({
                             type: "POST",
                             url: "/item/newitem/" + itemId + "/" + activeRoom,
