@@ -64,10 +64,17 @@ li {
     z-index: 205;
 }
 
+.budget {
+    position: fixed;
+    margin-left: 88%;
+    z-index: 210;
+    margin-top: 4vh;
+    font-family: 'Bungee', cursive;
+}
 .coincoin {
     position: fixed;
     margin-left: 89%;
-    margin-top: 90vh;
+    margin-top: 7vh;
 }
 
 a.add-room {
