@@ -42,7 +42,7 @@ li {
 
 .items-div {
     padding: 20px;
-    background: rgba(255, 255, 255);
+    background: white;
     min-height: 500px;
 }
 
@@ -107,6 +107,7 @@ a.add-room {
     height: calc(100vh - 110px);
     background: url("https://www.emoovz.com/bundles/app/frontend/images/bg-step2.jpg") center center;
     background-size: cover;
+    font-weight: bold;
 }
 
 .search-bar {
@@ -119,7 +120,7 @@ a.add-room {
 }
 
 .list-element-you-know {
-    background: lightblue;
+    background: pink;
     padding: 1vh;
 }
 
@@ -202,7 +203,7 @@ a.add-room {
 
 .btn-modal-recap:focus {
     background-color: #4C448F;
-    color:white;
+    color: white;
 }
 
 /*---right---*/
@@ -247,3 +248,44 @@ a.add-room {
     background-color: #4C448F;
     color: white;
 }
+
+.room-links .active {
+    color: #E54380;
+    text-transform: uppercase;
+}
+
+.tab button {
+    color: #4C448F;
+    text-transform: uppercase;
+}
+
+.roomCategoryModal {
+    color: #E54380;
+    text-transform: uppercase;
+}
+
+.roomCategoryModal:hover {
+    color: #E54380;
+    text-decoration: underline;
+}
+
+.modal-body{
+    cursor: pointer;
+}
+
+.modal-title {
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.tab-pane {
+    color: black;
+    text-transform: capitalize;
+}
+
+.badge {
+    margin-right: 20px;
+    margin-left: 10px;
+    background-color: #E54380 ;
+}
+

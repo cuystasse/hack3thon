@@ -44,4 +44,6 @@ $('.roomCategoryModal').on('click', function (e) {
     // trigger click on new room
     mylink.click();
 
+
+
 });
