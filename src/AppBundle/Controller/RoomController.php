@@ -6,7 +6,9 @@ use AppBundle\Entity\Room;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component\HttpFoundation\Request;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 
 /**
  * Room controller.
@@ -127,7 +129,7 @@ class RoomController extends Controller
      * @ParamConverter("roomCategory", options={"mapping":{"catid":"id"}})
      * @Method({"GET", "POST"})
      */
-    public function autoNew(Request $request,\AppBundle\Entity\RoomCategory $roomCategory, $roomName)
+    public function autoNew(Request $request, \AppBundle\Entity\RoomCategory $roomCategory, $roomName)
     {
         $em = $this->getDoctrine()->getManager();
         if ($request->isXmlHttpRequest()) {
@@ -138,6 +140,19 @@ class RoomController extends Controller
 
             return $this->redirectToRoute('homepage');
         }
+    }
+
+    /**
+     * @param Request $request
+     * @param \AppBundle\Entity\Room $room
+     * @Route("/printitems/{id}", name="showItemsInRoom")
+     * @Method({"GET", "POST"})
+     */
+    public function printItems(Request $request, Room $room)
+    {
+        return $this->render('room/items_in_room.html.twig', [
+            'itemType' => $room,
+        ]);
     }
 
     /**
@@ -152,7 +167,6 @@ class RoomController extends Controller
         return $this->createFormBuilder()
             ->setAction($this->generateUrl('room_delete', array('id' => $room->getId())))
             ->setMethod('DELETE')
-            ->getForm()
-        ;
+            ->getForm();
     }
 }

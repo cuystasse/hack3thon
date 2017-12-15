@@ -1,6 +1,6 @@
 $(".search-bar").keyup(function () {
     var itemType = $(this).val();
-    if (itemType.length >= 2) {
+    if (itemType.length >= 1) {
         $.ajax({
             type: "POST",
             url: "/itemtype/list/" + itemType,
@@ -13,7 +13,7 @@ $(".search-bar").keyup(function () {
                 for (itemtype in itemtypes) {
                     if (currentCat !== itemtypes[itemtype].icatName) {
                         currentCat = itemtypes[itemtype].icatName;
-                        html += "<li class='catpppp'>" + itemtypes[itemtype].icatName + "</li>";
+                        html += "<li class='unacceptable'>" + itemtypes[itemtype].icatName + "</li>";
                     }
                     html += "<li data-listid='" + itemtypes[itemtype].id + "' class='list-element-you-know' onclick='clickCounter()'>" + itemtypes[itemtype].name + "</li>";
                 }
@@ -21,15 +21,16 @@ $(".search-bar").keyup(function () {
                 $('#autocomplete').html(html);
                 $('#autocomplete .list-element-you-know').on('click', function () {
                     var itemId = $(this).data('listid');
-                    console.log(itemId);
+                    var activeRoom = 40;
+                    alert('OK');
                         $.ajax({
                             type: "POST",
-                            url: "/item/newitem/" + itemId,
+                            url: "/item/newitem/" + itemId + "/" + activeRoom,
                             timeout: 3000,
                             success: function () {
-                                $('.tab-pane').val(itemId);
+                                // $('.tab-pane').val(itemId);
                             }
-                        })
+                        });
                     if ($('.active .room-item[data-id=tab-' + itemId + ']').length === 0) {
                         elm = $("<li>" + $(this).text() + "<span class='badge'>" + 1 + "</span></li>")
                             .addClass('tab-pane room-item col-sm-6')

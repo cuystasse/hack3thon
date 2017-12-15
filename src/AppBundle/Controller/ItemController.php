@@ -3,10 +3,12 @@
 namespace AppBundle\Controller;
 
 use AppBundle\Entity\Item;
+use AppBundle\Entity\Room;
 use AppBundle\Form\ItemType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -124,16 +126,26 @@ class ItemController extends Controller
     /**
      * @param Request $request
      * @param \AppBundle\Entity\ItemType $itemType
-     * @Route("/newitem/{id}", name="newitem-id")
+     * @Route("/newitem/{itemtype_id}/{room_id}", name="newitem-id")
+     * @ParamConverter("itemType", options={"mapping":{"itemtype_id":"id"}})
+     * @ParamConverter("room", options={"mapping":{"room_id":"id"}})
      * @Method({"GET", "POST"})
      */
-    public function autoNew(Request $request,\AppBundle\Entity\ItemType $itemType)
+    public function autoNew(Request $request,\AppBundle\Entity\ItemType $itemType, Room $room)
     {
         $em = $this->getDoctrine()->getManager();
         if ($request->isXmlHttpRequest()) {
-            $item = new Item();
-            $item->setName(uniqid())->setItemType($itemType);
-            $em->persist($item);
+
+            $item = $em->getRepository('AppBundle:Item')->findOneBy(['itemType'=>$itemType, 'room'=>$room]);
+            if ($item) {
+                $item->setQuantity($item->getQuantity()+1);
+            } else {
+                $item = new Item();
+                $item->setItemType($itemType);
+                $item->setRoom($room);
+                $item->setQuantity(1);
+                $em->persist($item);
+            }
             $em->flush();
 
             return $this->redirectToRoute('homepage');
