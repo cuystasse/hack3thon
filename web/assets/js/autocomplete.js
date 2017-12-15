@@ -15,7 +15,7 @@ $(".search-bar").keyup(function () {
                         currentCat = itemtypes[itemtype].icatName;
                         html += "<li class='catpppp'>" + itemtypes[itemtype].icatName + "</li>";
                     }
-                    html += "<li data-listid='" + itemtypes[itemtype].id + "' class='list-element-you-know'>" + itemtypes[itemtype].name + "</li>";
+                    html += "<li data-listid='" + itemtypes[itemtype].id + "' class='list-element-you-know' onclick='clickCounter()'>" + itemtypes[itemtype].name + "</li>";
                 }
 
                 $('#autocomplete').html(html);

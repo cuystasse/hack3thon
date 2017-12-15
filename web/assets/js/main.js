@@ -25,9 +25,9 @@ function openRoom(evt, roomName) {
 }
 
 
-$('.room-links').click(function(){
-    $('#searchbar').focus();
-});
+// $('.room-links').click(function(){
+//     $('#searchbar').focus();
+// });
 
 $(function () {
   $('.karura').fadeOut('fast')
