@@ -25,12 +25,13 @@ function openRoom(evt, roomName) {
 }
 
 
-// $('.room-links').click(function(){
-//     $('#searchbar').focus();
-// });
 
 $(function () {
-  $('.karura').fadeOut('fast')
+  $('.karura').fadeOut(1);
 });
 
-document.getElementById("defaultOpen").click();
+$('.add-room').click();
+
+$('.room-links').click(function(){
+    $('#searchbar').focus();
+});
