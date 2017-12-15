@@ -45,6 +45,7 @@ li {
     padding: 20px;
     background: white;
     min-height: 500px;
+    overflow: hidden;
 }
 
 .room-item {
@@ -190,6 +191,7 @@ a.add-room {
 
 .modal.right .modal-body {
     padding: 15px 15px 80px;
+
 }
 
 .btn-modal-recap {
@@ -249,7 +251,10 @@ a.add-room {
     background-color: #4C448F;
     color: white;
 }
-
+.room-links{
+    height: 75vh;
+    overflow: hidden;
+}
 .room-links .active {
     color: #E54380;
     text-transform: uppercase;
@@ -290,3 +295,58 @@ a.add-room {
     background-color: #E54380 ;
 }
 
+.btn-success {
+    background-color: pink;
+    border: transparent;
+    border-radius: 70%;
+}
+
+.btn-success:active {
+    background-color: lightpink;
+    border: transparent;
+    border-radius: 70%;
+}
+
+.btn-success:hover {
+    background-color: pink;
+    border: transparent;
+    border-radius: 70%;
+}
+
+.btn-success:focus {
+    background-color: pink;
+    border: transparent;
+    border-radius: 70%;
+}
+
+.btn-danger {
+    background-color: hotpink;
+    border: transparent;
+    border-radius: 70%;
+}
+
+.btn-danger:active {
+    background-color: lightpink;
+    border: transparent;
+    border-radius: 70%;
+}
+
+.btn-danger:hover {
+    background-color: hotpink;
+    border: transparent;
+    border-radius: 70%;
+}
+
+.btn-danger:focus {
+    background-color: hotpink;
+    border: transparent;
+    border-radius: 70%;
+}
+
+.modal-body {
+    padding-right: 13%;
+}
+
+.room-link {
+    text-align: right;
+}
