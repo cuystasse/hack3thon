@@ -6,7 +6,9 @@ function modifyLink(parentDiv, roomName) {
         .text(roomName);
 
     mylink.on('click', function (e) {
-        openRoom(e, parentDiv.data('id') + '_' + (numberOfRoomCat + 1).toString());
+        console.log($(this).data('divid'));
+
+        openRoom(e, $(this).data('divid'));
     });
 
     $('.room-links .add-room-button').before(mylink);
@@ -46,7 +48,6 @@ $('.roomCategoryModal .btn-success').on('click', function (e) {
             $(this).data('id');
         }
     });
-
     modifyLink($(this).parent(), roomName);
 
     // add body
@@ -56,5 +57,5 @@ $('.roomCategoryModal .btn-success').on('click', function (e) {
     // $('#myRoomCategoryModal').modal('toggle');
 
     // trigger click on new room
-    // mylink.click();
+    $('.room-links .room-link:first-child').click();
 });
