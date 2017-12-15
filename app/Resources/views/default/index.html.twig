@@ -70,8 +70,12 @@
                         </div>
                         <div class="modal-body row">
                             {% for roomCategory in roomCategories %}
-                                <div data-id="{{ roomCategory.id }}"
-                                     class="roomCategoryModal col-md-6 text-center">{{ roomCategory.name }}</div>
+                                <div data-id="{{ roomCategory.id }}" class="roomCategoryModal col-md-6 text-center">
+                                    <span>{{ roomCategory.name | capitalize }}</span>
+                                    <button class="btn btn-success"><span class="glyphicon glyphicon-plus"></span></button>
+                                    <span>0</span>
+                                    <button class="btn btn-danger"><span class="glyphicon glyphicon-minus"></span></button>
+                                </div>
                             {% endfor %}
                         </div>
                         <div class="modal-footer">

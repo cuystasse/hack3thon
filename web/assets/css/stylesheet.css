@@ -1,5 +1,6 @@
-html {
-    font-family: arial;
+@font-face {
+    font-family: Gogotham;
+    src: url("../fonts/GothamBold.ttf");
 }
 
 li {
@@ -75,7 +76,6 @@ a.add-room {
     text-transform: uppercase;
     padding: 0.8em;
     color: white;
-    font-family: Gotham-Bold, arial;
     font-size: 16px;
     border-bottom: 3px solid #352F64;
 }
@@ -108,6 +108,7 @@ a.add-room {
     background: url("https://www.emoovz.com/bundles/app/frontend/images/bg-step2.jpg") center center;
     background-size: cover;
     font-weight: bold;
+    font-family: Gogotham, sans-serif;
 }
 
 .search-bar {
