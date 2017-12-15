@@ -43,8 +43,9 @@ li {
 
 .items-div {
     padding: 20px;
-    background: rgba(255, 255, 255);
+    background: white;
     min-height: 500px;
+    overflow: hidden;
 }
 
 .room-item {
@@ -114,6 +115,7 @@ a.add-room {
     height: calc(100vh - 110px);
     background: url("https://www.emoovz.com/bundles/app/frontend/images/bg-step2.jpg") center center;
     background-size: cover;
+    font-weight: bold;
     font-family: Gogotham, sans-serif;
 }
 
@@ -127,7 +129,7 @@ a.add-room {
 }
 
 .list-element-you-know {
-    background: lightblue;
+    background: pink;
     padding: 1vh;
 }
 
@@ -196,6 +198,7 @@ a.add-room {
 
 .modal.right .modal-body {
     padding: 15px 15px 80px;
+
 }
 
 .btn-modal-recap {
@@ -210,7 +213,7 @@ a.add-room {
 
 .btn-modal-recap:focus {
     background-color: #4C448F;
-    color:white;
+    color: white;
 }
 
 /*---right---*/
@@ -254,4 +257,103 @@ a.add-room {
 .print:focus {
     background-color: #4C448F;
     color: white;
+}
+.room-links{
+    height: 75vh;
+    overflow: hidden;
+}
+.room-links .active {
+    color: #E54380;
+    text-transform: uppercase;
+}
+
+.tab button {
+    color: #4C448F;
+    text-transform: uppercase;
+}
+
+.roomCategoryModal {
+    color: #E54380;
+    text-transform: uppercase;
+}
+
+.roomCategoryModal:hover {
+    color: #E54380;
+    text-decoration: underline;
+}
+
+.modal-body{
+    cursor: pointer;
+}
+
+.modal-title {
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.tab-pane {
+    color: black;
+    text-transform: capitalize;
+}
+
+.badge {
+    margin-right: 20px;
+    margin-left: 10px;
+    background-color: #E54380 ;
+}
+
+.btn-success {
+    background-color: pink;
+    border: transparent;
+    border-radius: 70%;
+}
+
+.btn-success:active {
+    background-color: lightpink;
+    border: transparent;
+    border-radius: 70%;
+}
+
+.btn-success:hover {
+    background-color: pink;
+    border: transparent;
+    border-radius: 70%;
+}
+
+.btn-success:focus {
+    background-color: pink;
+    border: transparent;
+    border-radius: 70%;
+}
+
+.btn-danger {
+    background-color: hotpink;
+    border: transparent;
+    border-radius: 70%;
+}
+
+.btn-danger:active {
+    background-color: lightpink;
+    border: transparent;
+    border-radius: 70%;
+}
+
+.btn-danger:hover {
+    background-color: hotpink;
+    border: transparent;
+    border-radius: 70%;
+}
+
+.btn-danger:focus {
+    background-color: hotpink;
+    border: transparent;
+    border-radius: 70%;
+}
+
+.modal-body {
+    padding-right: 13%;
+}
+
+.room-link {
+    text-align: right;
 }

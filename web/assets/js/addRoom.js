@@ -57,5 +57,6 @@ $('.roomCategoryModal .btn-success').on('click', function (e) {
     // $('#myRoomCategoryModal').modal('toggle');
 
     // trigger click on new room
+
     $('.room-links .room-link:first-child').click();
 });
